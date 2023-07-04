@@ -35,3 +35,7 @@ Analysed for risk of recidivism and risk of violent recidivism.
 Distributions show white defendants scored less risky than black.
 
 Trained a logistic regression model to predict outcome according to different factors. Race was predictive of recidivism.
+
+
+Test Compas Overall Predictive Accuracy:
+
