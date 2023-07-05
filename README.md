@@ -14,28 +14,41 @@ Propublica findings:
 - even when controlling for prior crimes, future recidivism, age and gender, black defendants were more likely to be assigned higher recidivism scores than white defendants
 
 Compas data:
-Received compas scores for all people in Broward County between 2013 and 2014. Used only score produced for pre-trial for 11,757 people.
+- Received compas scores for all people in Broward County between 2013 and 2014. Used only score produced for pre-trial for 11,757 people.
 
-Each defendant received at least three compas scores:
-- Risk of recidivism
-- Risk of violence
-- Risk of failure to appear
-
-Scores are from 1 to 10. 1 to 4 is low, 5 - 7 is Medium, 8 to 10 is high.
-
-Combined with public court records to identify who re-offended.
+- Each defendant received at least three compas scores:
+  - Risk of recidivism
+  - Risk of violence
+  - Risk of failure to appear
+- Scores are from 1 to 10. 1 to 4 is low, 5 - 7 is Medium, 8 to 10 is high.
+- Combined with public court records to identify who re-offended.
 
 Defining recidivism:
-A new offense within two years
+- A new offense within two years
 
 
 Analysis:
-Analysed for risk of recidivism and risk of violent recidivism.
-
-Distributions show white defendants scored less risky than black.
-
-Trained a logistic regression model to predict outcome according to different factors. Race was predictive of recidivism.
+- Analysed for risk of recidivism and risk of violent recidivism.
+- Distributions show white defendants scored less risky than black.
+- Trained a logistic regression model to predict outcome according to different factors. Race was predictive of recidivism.
 
 
 Test Compas Overall Predictive Accuracy:
+- Fit a cox proportional hazards model to the data (allows comparing rates of recidivism while controlling for time)
+- People with high scores were 3.5 times as likely to recidivate as people in the low category. The score has predictive value.
+- Concordance score of 63.6 (it two people randomly selected the COMPAS score successfully ranks 63.6% of the time)
+- COMPAS unevenly predicts recidivism between genders. Result is high risk women have a much lower risk of recidivism than a high risk man.
+- Examined distribution of false positive and false negative errors.
+- Black defendants are more likely to be misclassified at higher risk than white defendants.
+- Black defendants who do not recidivate were nearly twice as likely to be classified by COMPAS as higher risk compared to their whtie counterparts.
+- White defendants more likely to be wrongly predicted that they would not commit additional crimes.
 
+  False positive = Falsely predict to recidivate.
+  Black defendants is 38.14
+  White defendants is 18.46
+  More black defendants were incorrectly to be predicted to recidivate. More likely to treat non-threatening black defendants as threats.
+
+  False negative = Falsely predict not to recidivate.
+  Black defendants is 38.37
+  White defendants is 62.62
+  More white defendants were incorrectly to be predicted not to recidivate. More likely to treat dangerous white defendants as a non-threat.
