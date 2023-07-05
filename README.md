@@ -1,4 +1,4 @@
-# compas
+# compas background
 
 https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing
 
@@ -52,3 +52,11 @@ Test Compas Overall Predictive Accuracy:
   Black defendants is 38.37
   White defendants is 62.62
   More white defendants were incorrectly to be predicted not to recidivate. More likely to treat dangerous white defendants as a non-threat.
+
+  # Analysis
+identify known issue with dataset
+Show bias according to fairlearn measures
+apply bia correction
+
+
+Retrain model with a transparent model
