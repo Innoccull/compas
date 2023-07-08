@@ -60,3 +60,10 @@ apply bia correction
 
 
 Retrain model with a transparent model
+
+  # Harm
+  What is fairness in AI?
+
+There are two ways in which there can be harm in this context. The first is on defendants where incorrectly predicting they will recidivate will lead to judicial decisions that are incorrectly harsh. We want to minimise this.  
+
+The concern in this context is therefore with where we get predictions of being a recidivist wrong by a sensitive feature as this is where algorithm features 
