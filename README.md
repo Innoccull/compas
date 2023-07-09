@@ -60,32 +60,3 @@ apply bias correction
 
 
 Retrain model with a transparent model
-
-# Fairness and Bias in AI
-While it is universally recognised that fairness is an important aspect of AI systems, There is no universally agreed definition of fairness means in the context of AI. However one commonly agreed point is that the presence of bias in AI systems can undermine fairness and that addressing these biases are a key part in ensuring AI systems are fair.
-
-Bias in AI systems can be problematic for several reasons:
-- Allocation harms: It can extend or withhold opportunities from specific groups.
-- Penalty harms
-- Quality of service harms
-- Stereotyping
-- Erasure harms
-
-The COMPAS system made predictions about the likelihood of individuals to recidivate. This information was used by judges during pre-trial hearings to determine what should be done with defendants. An incorrect prediction made by COMPAS could result in an individual being incorrectly penalised. This is a type of penalty harm. Bias in this context would be detecting if the model correctly predicts likelihood to recidivate by certain protected groups to see if specific groups are treated without any unfair bias in this context.
-
-
-# Fairness Metrics
-There are a number of metrics that can be used to detect bias:
-- Selection rate | shows the proportion within a group that are predicted to have a positive outcome | Tells us the proportion of each group that is predicted to recidivate
-- False positive rate | Tells us how often we get it wrong that we decide someone is a recidivist. | If one group has a higher false positive rate in compas, we will more likely falsely judge them to be a recidivist
-- False negative rate | Tells us how often we incorrectly predic someone will not recidivate | If one group has a higher false negative rate, we are treating them as less 'risky'
-- Demographic parity | shows the difference in selection rates between groups | A difference in selection rates will means there is a difference in the likelihood the groups will be selected as recidivist 
-- Equalised odds | tells us if the model performs equally well for selecting correct cases across groups | groups are being incorrectly predicted to recidivate
-- Equal opportunity | the model performs equally well on the positive case | in compas this refers to the rate of being correct for positive predictions
-
-As we are concerned with penalty harms in the context of COMPAS, we will apply false positive rate and equalised odds to detect bias.
-
-
-# Detecting Bias with Fairlearn
-Fairlearn is a community-driven project that provides libraries for detecting and mitigating bias. It is the first library we will use for detecting bias in the COMPAS dataset.
-
